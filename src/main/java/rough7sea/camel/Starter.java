@@ -43,8 +43,8 @@ public class Starter {
             public void configure() throws Exception {
                 from("direct:DistributeOrderDSL")
                         .split(xpath("//order[@product='soaps']/items"))
-                        .to("stream:out");
-//                        .to("file:src/main/resources/order?fileName=soaps-${date:now:yyyy_MM_dd}.txt");
+//                        .to("stream:out");
+                        .to("file:src/main/resources/order?fileName=soaps-${date:now:yyyy_MM_dd}.txt");
             }
         });
     }
