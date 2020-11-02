@@ -1,0 +1,14 @@
+<items>
+            <item>
+                <Brand>Cinthol</Brand>
+                <Type>Original</Type>
+                <Quantity>4</Quantity>
+                <Price>25</Price>
+            </item>
+            <item>
+                <Brand>Cinthol</Brand>
+                <Type>Lime</Type>
+                <Quantity>6</Quantity>
+                <Price>30</Price>
+            </item>
+        </items>

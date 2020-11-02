@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<OrderID Order = "001">
+    <order product = "soaps">
+        <items>
+            <item>
+                <Brand>Cinthol</Brand>
+                <Type>Original</Type>
+                <Quantity>4</Quantity>
+                <Price>25</Price>
+            </item>
+            <item>
+                <Brand>Cinthol</Brand>
+                <Type>Lime</Type>
+                <Quantity>6</Quantity>
+                <Price>30</Price>
+            </item>
+        </items>
+    </order>
+
+    <order product = "Oil">
+        <items>
+            <item>
+                <Brand>Saffola</Brand>
+                <Type>Gold</Type>
+                <Quantity>2</Quantity>
+                <Price>649</Price>
+            </item>
+            <item>
+                <Brand>Fortune</Brand>
+                <Type>Sunlite</Type>
+                <Quantity>1</Quantity>
+                <Price>525</Price>
+            </item>
+        </items>
+    </order>
+
+    <order product = "Milk">
+        <items>
+            <item>
+                <Product>Milk</Product>
+                <Brand>Amul</Brand>
+                <Type>Pure</Type>
+                <Quantity>2</Quantity>
+                <Price>60</Price>
+            </item>
+        </items>
+    </order>
+</OrderID>
