@@ -13,6 +13,7 @@ dependencies {
     implementation 'org.apache.camel:camel-core:3.4.2'
     implementation 'org.apache.camel:camel-jdbc:3.4.2'
     implementation 'org.apache.camel:camel-stream:3.4.2'
+    implementation 'org.apache.camel:camel-mail:3.4.2'
 
     runtimeOnly 'org.postgresql:postgresql:42.2.1'
 

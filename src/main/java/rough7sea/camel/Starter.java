@@ -1,5 +1,8 @@
 package rough7sea.camel;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.Message;
 import org.apache.camel.ProducerTemplate;
@@ -7,10 +10,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.DefaultMessage;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 public class Starter {
     public static void main(String[] args) throws Exception {
@@ -26,7 +25,7 @@ public class Starter {
 
         ProducerTemplate template = camel.createProducerTemplate();
         InputStream orderInputStream = new FileInputStream(
-                new File("D:/Capital/apache-camel-demo/files/order.xml"));
+                "src/main/resources/files/order.xml");
 
         template.sendBody("direct:DistributeOrderDSL", orderInputStream);
 
@@ -54,7 +53,7 @@ public class Starter {
         ProducerTemplate template = camel.createProducerTemplate();
 
         template.sendBody(
-                "file://D:/Capital/apache-camel-demo/files?fileName=event-${date:now:yyyy_MM_dd-HH_mm}.html",
+                "file:src/main/resources/files?fileName=event-${date:now:yyyy_MM_dd-HH_mm}.html",
                 "<hello>Hello camel and again!</hello>"
         );
 
@@ -89,7 +88,7 @@ public class Starter {
 
         camel.addRoutes(new RouteBuilder() {
             @Override
-            public void configure() throws Exception {
+            public void configure() {
                 from("timer:base?period=60000")
                         .routeId("JDBC route")
                         .setHeader("key", constant(6))
@@ -108,7 +107,7 @@ public class Starter {
 
                             exchange.setMessage(message);
                         })
-                        .toD("file://D:/Capital/apache-camel-demo/files/toB?fileName=done-${date:now:yyyyMMdd}-${headers.rnd}.txt");
+                        .toD("file:/src/main/resources/files/toB?fileName=done-${date:now:yyyyMMdd}-${headers.rnd}.txt");
             }
         });
     }
