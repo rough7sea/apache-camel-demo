@@ -8,4 +8,7 @@
 /httpRequests/
 .idea/
 .gradle/
+gradle/
+gradlew.bat
+gradlew
 build/

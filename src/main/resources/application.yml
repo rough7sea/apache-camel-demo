@@ -1,0 +1,8 @@
+from: src/main/resources/files/from
+toB: src/main/resources/files/toB
+toA: src/main/resources/files/toA
+mail:
+  userName: ${MAIL_USERNAME}
+  password: ${MAIL_PASSWORD}
+  host: smtp.gmail.com
+  port: 465

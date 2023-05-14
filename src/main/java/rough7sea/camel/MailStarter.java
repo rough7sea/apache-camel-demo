@@ -9,7 +9,7 @@ public class MailStarter {
     public static void main(String[] args) throws Exception {
 
         CamelContext camel = new DefaultCamelContext();
-        camel.getPropertiesComponent().setLocation("classpath:application.properties");
+        camel.getPropertiesComponent().setLocation("classpath:application.yml");
 
         mailRoute(camel);
 

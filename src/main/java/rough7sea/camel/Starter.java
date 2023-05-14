@@ -15,7 +15,7 @@ public class Starter {
     public static void main(String[] args) throws Exception {
         CamelContext camel = new DefaultCamelContext();
 
-        camel.getPropertiesComponent().setLocation("classpath:application.properties");
+        camel.getPropertiesComponent().setLocation("classpath:application.yml");
 
 //        addJDBCCase(camel);
 //        addFileCase(camel);
@@ -39,7 +39,7 @@ public class Starter {
 
         camel.addRoutes(new RouteBuilder() {
             @Override
-            public void configure() throws Exception {
+            public void configure() {
                 from("direct:DistributeOrderDSL")
                         .split(xpath("//order[@product='soaps']/items"))
 //                        .to("stream:out");
@@ -62,10 +62,10 @@ public class Starter {
     private static void addFileCase(CamelContext camel) throws Exception {
         camel.addRoutes(new RouteBuilder() {
             @Override
-            public void configure() throws Exception {
+            public void configure() {
                 from("file:{{from}}")
                         .routeId("File processing")
-//                        .log(">>>> ${body}")
+                        .log(">>>> ${body}")
                         .convertBodyTo(String.class)
                         .to("log:?showBody=true&showHeaders=true")
                         .choice()
